@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proposal Generator</title>
+    <link rel="shortcut icon" href="https://postimage.me/images/2025/03/29/cc2-removebg-preview.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+
+</head>
+
+
+<body>
+    <div class="video-background">
+        <iframe id="yt-background" 
+            src="https://www.youtube.com/embed/UHCpzLthBic?autoplay=1&mute=1&loop=1&playlist=UHCpzLthBic&controls=0&showinfo=0&modestbranding=1"
+            frameborder="0" 
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    
+
+
+    
+    <div>
+        <div class="container">
+        
+                <div class="inner-container">
+                    <img class="logo" src="https://postimage.me/images/2025/03/29/cc2-removebg-preview.png" alt="cc2 removebg preview">
+                </div>
+
+            <div class="d-flex justify-content-around inner-container">
+                <button type="button" class="btn btn-dark chat-button" style="border-radius: 30px;">Chat</button>
+                <button type="button" class="btn btn-dark chat-button" style="border-radius: 30px;">Chat Gen</button>
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="IntroductionContainer" id="IntroductionContainer">
+        
+        </div>
+    
+
+        
+        <!--from here is the body. (contains lable and some description)-->
+
+
+        <div class="body-container">
+            <div class="containerx">
+            
+                <div class="input-group input-group-lg lable">
+                    <input name="query" type="text" class="form-control input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="One step away from infinity...">
+                </div>
+    
+                <div class="d-flex justify-content-around inner-container">
+                    <button type="button" class="btn btn-dark chat-button" style="border-radius: 30px;">Send Mail</button>
+                    <button type="button" class="btn btn-dark chat-button" style="border-radius: 30px;">Genetate</button>
+    
+                </div>
+    
+    
+    
+            </div>
+        </div>
+
+            <div class="typing-container container" id="typing-container">
+                <div id="textContainer">
+                    <p id="animatedText"></p><span class="cursor"></span>
+                </div>
+                
+            </div>
+    
+    </div>    
+
+      
+    
+
+
+
+    <script>
+        const paragraph = `This is a sample paragraph. 
+        It should appear as if someone is typing it.
+        Each line will auto-scroll as new text is added.`;
+    
+        let index = 0;
+        const animatedText = document.getElementById("animatedText");
+        const textContainer = document.getElementById("textContainer");
+    
+        function typeText() {
+            if (index < paragraph.length) {
+                animatedText.innerHTML += paragraph[index];
+                index++;
+    
+                textContainer.scrollTop = textContainer.scrollHeight;
+    
+                setTimeout(typeText, 10); // 10 is the speed here 
+            }
+        }
+    
+        typeText(); 
+    </script>
+
+
+<!-- for text animation above the input div  -->
+
+        <script>
+            const IntroductionContainer = "Welcome to Code Crafters! an ultimate destination for all solutions!";
+            let charIndex = 0;
+            let typingContainer = document.getElementById("IntroductionContainer");
+            let totalTime = 4000; 
+            let speed = totalTime / IntroductionContainer.length;
+
+            function typeTextanimation() {
+                if (charIndex < IntroductionContainer.length) {
+                    typingContainer.innerHTML = IntroductionContainer.substring(0, charIndex) + '<span class="cursor"></span>';
+                    charIndex++;
+                    setTimeout(typeTextanimation, speed);
+                } else {
+                    typingContainer.innerHTML = IntroductionContainer; 
+                }
+            }
+
+            typeTextanimation();
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
