@@ -1,0 +1,58 @@
+.honk-logo {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
+}
+.source-sans-3-regular {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.subtext {
+  font-size: 1.2rem;
+}
+.source-sans-3-bold {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+
+  font-style: normal;
+}
+.headline {
+  font-size: 2.3rem;
+}
+.cta-btn {
+  background-color: #4263eb;
+}
+.cta-btn:hover {
+  background-color: #2e45a1;
+}
+body {
+  background-color: #121212;
+}
+main {
+  margin-top: 4.6rem !important;
+}
+.navbar {
+  background-color: #d9d9d926;
+  backdrop-filter: blur(10px);
+}
+.nav-link:hover {
+  background-color: #121212;
+  scale: 110%;
+}
+
+#proposal {
+  background-color: #d9d9d926 !important;
+}
+.hero-section {
+  background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 87vh;
+}
