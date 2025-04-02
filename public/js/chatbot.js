@@ -6,7 +6,7 @@ const chatbotContainer = document.querySelector(".chatbot-container");
 let userMessage;
 
 // valid API key
-const CHAT_API_KEY = "AIzaSyAYu8EpefMaE-j_hVE-4IXdt00huG3dG7c";
+// const CHAT_API_KEY = "";
 // const toggleChatbot = () => {
 //   chatbotContainer.classList.toggle("hidden");
 // };
@@ -19,17 +19,13 @@ const createChatLi = (message, className) => {
 };
 
 const generateResponse = () => {
-  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${CHAT_API_KEY}`;
-
-  const requestOptions = {
+  fetch("/chatbot", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: userMessage }] }],
-    }),
-  };
-
-  fetch(API_URL, requestOptions)
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ question: userMessage }),
+  })
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
@@ -37,11 +33,22 @@ const generateResponse = () => {
       return res.json();
     })
     .then((data) => {
-      if (data.candidates && data.candidates.length > 0) {
-        const botMessage = data.candidates[0].content.parts[0].text;
-        chatbox.appendChild(createChatLi(botMessage, "incoming"));
+      if (data) {
+        const botMessage = data;
+        const thinkingLi = createChatLi("thinking...", "incoming");
+        reinitializeVanta();
+        chatbox.appendChild(thinkingLi);
+
+        setTimeout(() => {
+          thinkingLi.remove();
+          reinitializeVanta();
+          chatbox.appendChild(createChatLi(botMessage, "incoming"));
+          window.scroll(500, 500);
+        }, 1000);
       } else {
+        reinitializeVanta();
         chatbox.appendChild(createChatLi("No response from AI", "incoming"));
+        window.scroll(500, 500);
       }
       chatbox.scrollTop = chatbox.scrollHeight;
     })
@@ -53,15 +60,12 @@ const generateResponse = () => {
 
 const handleChat = () => {
   userMessage = chatInput.value.trim();
-  if (!userMessage) return;
-
+  if (!userMessage) return alert("type something");
+  reinitializeVanta();
   chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+  window.scroll(500, 500);
   chatInput.value = "";
-
-  setTimeout(() => {
-    chatbox.appendChild(createChatLi("Thinking...", "incoming"));
-    generateResponse();
-  }, 1000);
+  generateResponse();
 };
 
 sendChatBtn.addEventListener("click", handleChat);

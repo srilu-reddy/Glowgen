@@ -12,6 +12,9 @@
   font-weight: 500;
   font-style: normal;
 }
+html {
+  height: 100vh;
+}
 .subtext {
   font-size: 1.2rem;
 }
@@ -25,34 +28,87 @@
 .headline {
   font-size: 2.3rem;
 }
-.cta-btn {
+.purple-btn {
   background-color: #4263eb;
 }
-.cta-btn:hover {
+.purple-btn:hover {
   background-color: #2e45a1;
+  scale: 95%;
 }
 body {
-  background-color: #121212;
+  /* background-color: #121212; */
+  width: 100%;
 }
 main {
-  margin-top: 4.6rem !important;
+  padding-top: 4.6rem !important;
 }
 .navbar {
   background-color: #d9d9d926;
   backdrop-filter: blur(10px);
 }
 .nav-link:hover {
-  background-color: #121212;
+  background-color: #2e45a1;
   scale: 110%;
 }
 
+textarea {
+  background-color: #07070761 !important;
+  border: none !important;
+  color: white !important;
+}
+textarea::placeholder {
+  color: white !important;
+}
+
 #proposal {
-  background-color: #d9d9d926 !important;
+  background-color: #07070761 !important;
+  max-height: 45rem;
+  overflow-y: scroll;
 }
 .hero-section {
-  background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg");
+  /* background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   height: 87vh;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.btn-shine {
+  background: linear-gradient(to right, #4d4d4d 0, white 15%, #4d4d4d 20%);
+  -webkit-background-clip: text;
+  background-position: 0;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 700;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  30% {
+    background-position: 50px;
+  }
+  60% {
+    background-position: 110px;
+  }
+  100% {
+    background-position: 180px;
+  }
 }

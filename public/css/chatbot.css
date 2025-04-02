@@ -35,17 +35,21 @@
   font-size: 2.3rem;
 }
 /* call to action button */
-.cta-btn {
+.purple-btn {
   background-color: #4263eb;
 }
-.cta-btn:hover {
+.purple-btn:hover {
   background-color: #2e45a1;
+  scale: 95%;
+}
+html {
+  height: 100vh;
 }
 /* Body Styling */
 body {
   background: #121212;
   color: #fff;
-  min-height: 100vh;
+  /* height: 100%; */
   /* display: flex;
   justify-content: center;
   align-items: center; */
@@ -77,13 +81,39 @@ body {
 } */
 /* hero section */
 .hero-section {
-  background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg");
+  /* background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg");
   display: none;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 85vh;
-  margin-top: 4.7rem;
+  background-size: cover; */
+  height: 87vh;
+  padding-top: 4.7rem;
+}
+/* gemini logo */
+.btn-shine {
+  background: linear-gradient(to right, #4d4d4d 0, white 15%, #4d4d4d 20%);
+  -webkit-background-clip: text;
+  background-position: 0;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 700;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  30% {
+    background-position: 50px;
+  }
+  60% {
+    background-position: 110px;
+  }
+  100% {
+    background-position: 180px;
+  }
 }
 
 /* Chatbot Container */
@@ -91,16 +121,16 @@ body {
   /* position: fixed;
   bottom: 50px; */
   /* right: 30px; */
-  margin: 4.5rem 0;
+  /* padding: 4.5rem 0; */
   width: 50vw;
   max-height: 60vh;
   /* background: rgb(156, 50, 50); */
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  opacity: 1;
+  /* opacity: 1; */
   /* transition: opacity 0.3s, transform 0.3s; */
 }
 
@@ -175,13 +205,13 @@ body {
 }
 
 .chatbox .outgoing p {
-  background: #212121;
+  background-color: #4263eb;
   color: white;
   font-size: 15px;
 }
 
 .nav-link:hover {
-  background-color: #121212;
+  background-color: #2e45a1;
   scale: 110%;
 }
 
@@ -206,7 +236,7 @@ body {
 }
 
 .send-btn {
-  background: #1c1c1c;
+  /* background: #1c1c1c; */
   color: white;
   border: none;
   padding: 12px 20px;

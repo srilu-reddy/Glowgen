@@ -72,17 +72,20 @@
     <div
       class="hero-section d-flex flex-column align-items-center justify-content-evenly"
     >
-      <p class="honk-logo">Proposal AI</p>
+      <p class="source-sans-3-regular text-light fs-3 btn-shine">
+        <img src="gemini-brand-color.svg" alt="gemini" width="80%" />
+        Proposal AI
+      </p>
       <div>
-        <p class="source-sans-3-bold text-dark text-center headline">
+        <p class="source-sans-3-bold text-light text-center headline">
           Chat with Our AI-Powered Software Consultant
         </p>
-        <p class="source-sans-3-regular text-dark subtext">
+        <p class="source-sans-3-regular text-light subtext">
           Get instant answers, refine project requirements, and generate
           structured proposals—right within our smart chatbot.
         </p>
       </div>
-      <button class="btn cta-btn px-4 py-2">
+      <button class="btn purple-btn px-4 py-2">
         <a
           href="#start-chatting"
           class="source-sans-3-regular text-light text-decoration-none"
@@ -91,8 +94,11 @@
       </button>
     </div>
     <!-- Chatbot Container -->
-    <div class="container d-flex justify-content-center" id="start-chatting">
-      <div class="chatbot-container hidden">
+    <div
+      class="container d-flex justify-content-center py-5 my-5"
+      id="start-chatting"
+    >
+      <div class="chatbot-container">
         <!-- <div class="chatbot-header">
           <h2>AI Chatbot</h2>
           <button class="close-btn" onclick="toggleChatbot()">✕</button>
@@ -102,11 +108,12 @@
 
         <div class="chat-input">
           <input
+            id="question"
             class="source-sans-3-regular"
             placeholder="Type a message..."
             required
           />
-          <button class="send-btn">
+          <button class="send-btn purple-btn">
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </div>
@@ -117,5 +124,51 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.js"
+      integrity="sha512-+maVcOki4j7Zo1VOqbhjH/fKV7iuE9WYMdhObx1ozxz2xu3qZMVCGHOAZKLKLksakyaWllQzafnLZSGBRl3lRg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"
+      integrity="sha512-lH/5/byfwH0bqySiiSINJJoEoWFEBGKgOwsnAlZZPviNJI1DDBVXjPHgEkM0fowfOp6NMBAN4ROAYjx+uEkEjQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      // Function to re-initialize Vanta.js
+      function reinitializeVanta() {
+        // First, destroy the existing Vanta instance
+        if (VANTA.current) {
+          VANTA.current.destroy();
+        }
+        // Then, initialize a new Vanta instance
+        VANTA.NET({
+          el: "body",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x3fc7ff,
+        });
+      }
+    </script>
+    <script>
+      VANTA.NET({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x3fc7ff,
+      });
+    </script>
   </body>
 </html>
