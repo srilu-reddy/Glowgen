@@ -72,7 +72,7 @@ textarea::placeholder {
 }
 
 #proposal {
-  background-color: #fce4ec !important;
+  background-color: white !important;
   max-height: 45rem;
   overflow-y: scroll;
 }
