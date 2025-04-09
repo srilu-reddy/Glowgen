@@ -1,70 +1,82 @@
+
 .honk-logo {
-  font-family: "Honk", system-ui;
-  font-optical-sizing: auto;
-  font-size: 2rem;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "MORF" 15, "SHLN" 50;
+  font-family: "Kalnia", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsla(60, 67%, 40%, 0.448); /* Bright pink */
+  text-shadow: 1px 1px 2px #fff, 2px 2px 6px #ff69b4; /* Softer and clearer */
 }
+
 .source-sans-3-regular {
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
+
 html {
   height: 100vh;
 }
+
 .subtext {
   font-size: 1.2rem;
 }
+
 .source-sans-3-bold {
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
-
   font-style: normal;
 }
+
 .headline {
   font-size: 2.3rem;
 }
+
 .purple-btn {
-  background-color: #4263eb;
+  background-color: #e49acb;
 }
+
 .purple-btn:hover {
-  background-color: #2e45a1;
+  background-color: #d26cb4;
   scale: 95%;
 }
+
 body {
   /* background-color: #121212; */
   width: 100%;
 }
+
 main {
   padding-top: 4.6rem !important;
 }
+
 .navbar {
-  background-color: #d9d9d926;
+  background-color: #f8d7e7cc;
   backdrop-filter: blur(10px);
 }
+
 .nav-link:hover {
-  background-color: #2e45a1;
+  background-color: #d26cb4;
   scale: 110%;
 }
 
 textarea {
-  background-color: #07070761 !important;
+  background-color: #fce4ec !important;
   border: none !important;
-  color: white !important;
+  color: #5c0a3a !important;
 }
+
 textarea::placeholder {
-  color: white !important;
+  color: #5c0a3a !important;
 }
 
 #proposal {
-  background-color: #07070761 !important;
+  background-color: #fce4ec !important;
   max-height: 45rem;
   overflow-y: scroll;
 }
+
 .hero-section {
   /* background-image: url("https://raw.githubusercontent.com/mobalti/open-props-interfaces/refs/heads/main/ai-hero-chat-popover/assets/bg-gradient.jpg");
   background-position: center;
@@ -72,23 +84,24 @@ textarea::placeholder {
   background-size: cover; */
   height: 87vh;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #888888;
+  background: #f8bbd0;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ffffff;
+  background: #ffb6c1;
   border-radius: 5px;
 }
 
 .btn-shine {
-  background: linear-gradient(to right, #4d4d4d 0, white 15%, #4d4d4d 20%);
+  background: linear-gradient(to right, #ff69b4 0, white 15%, #ff69b4 20%);
   -webkit-background-clip: text;
   background-position: 0;
   -webkit-text-fill-color: transparent;
